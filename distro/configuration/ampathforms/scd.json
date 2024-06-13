@@ -1,8 +1,8 @@
 {
-  "name": "ROUTINE VISIT FORM",
+  "name": "SCD ROUTINE VISIT FORM",
   "pages": [
     {
-      "label": "ROUTINE VISIT FORM",
+      "label": "SCD ROUTINE VISIT FORM",
       "sections": [
         {
           "label": "Main Reason For Clinic Visit",
@@ -1103,7 +1103,7 @@
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "previouslyDiagnosedAndStillPresentChronicProblems !== '104c1af7-e26b-4cb5-9b38-705a90af86b9'"
+                "hideWhenExpression": "isEmpty(previouslyDiagnosedAndStillPresentChronicProblems) || previouslyDiagnosedAndStillPresentChronicProblems !== '104c1af7-e26b-4cb5-9b38-705a90af86b9'"
               }
             },
             {
@@ -1149,7 +1149,7 @@
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "previouslyDiagnosedAndStillPresentChronicProblems !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "isEmpty(previouslyDiagnosedAndStillPresentChronicProblems) || previouslyDiagnosedAndStillPresentChronicProblems !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             }
           ]
@@ -1204,7 +1204,7 @@
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "selectState !== 'fb15a476-612f-4cb1-95c2-e314c575b60a'"
+                "hideWhenExpression": "isEmpty(selectState) || selectState !== 'fb15a476-612f-4cb1-95c2-e314c575b60a'"
               }
             },
             {
@@ -1218,7 +1218,7 @@
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "selectState !== 'fb15a476-612f-4cb1-95c2-e314c575b60a' || stableChronicProblem !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "isEmpty(selectState) || selectState !== 'fb15a476-612f-4cb1-95c2-e314c575b60a' || stableChronicProblem !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             },
             {
@@ -1257,7 +1257,7 @@
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "febrilleIllnessOtherThanPneumonia !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "isEmpty(febrilleIllnessOtherThanPneumonia) || febrilleIllnessOtherThanPneumonia !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             },
             {
@@ -1437,7 +1437,7 @@
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "otherConditions !== '104c1af7-e26b-4cb5-9b38-705a90af86b9'"
+                "hideWhenExpression": "isEmpty(otherConditions) || otherConditions !== '104c1af7-e26b-4cb5-9b38-705a90af86b9'"
               }
             },
             {
@@ -1451,7 +1451,7 @@
                 "answers": []
               },
               "hide": {
-                "hideWhenExpression": "otherConditions !== '9fc10ef3-baec-4ec2-82fc-04ef486c593a'"
+                "hideWhenExpression": "isEmpty(otherConditions) || otherConditions !== '9fc10ef3-baec-4ec2-82fc-04ef486c593a'"
               }
             },
             {
@@ -1465,7 +1465,7 @@
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "otherConditions !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "isEmpty(otherConditions) || otherConditions !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             }
           ]
@@ -1528,49 +1528,17 @@
               "validators": []
             },
             {
-              "label": "Other",
+              "label": "Other Parenteral Analgesics",
               "type": "obs",
               "required": false,
               "id": "otherParenteralAnalgesics",
               "questionOptions": {
                 "rendering": "textarea",
-                "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "org.openmrs.module.mdrtb",
-                    "value": "OTHER"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED MVP",
-                    "value": "56221000105001"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "AMPATH",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "NARROWER-THAN",
-                    "type": "SNOMED CT",
-                    "value": "74964007"
-                  }
-                ]
+                "concept": "1077b09c-a0f4-4c96-a144-5123caa9b0f5"
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "parenteralAnalgesics !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "isEmpty(parenteralAnalgesics)  || parenteralAnalgesics !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             },
             {
@@ -1595,49 +1563,17 @@
               "validators": []
             },
             {
-              "label": "Other",
+              "label": "Other Parenteral Antibiotics",
               "type": "obs",
               "required": false,
               "id": "otherParenteralAntibiotics",
               "questionOptions": {
                 "rendering": "textarea",
-                "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "org.openmrs.module.mdrtb",
-                    "value": "OTHER"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED MVP",
-                    "value": "56221000105001"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "AMPATH",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "NARROWER-THAN",
-                    "type": "SNOMED CT",
-                    "value": "74964007"
-                  }
-                ]
+                "concept": "f7a26a13-2ef2-40a8-9cd9-dcda5c9331e3"
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "parenteralAntibiotics !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "isEmpty(parenteralAntibiotics)  || parenteralAntibiotics !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             },
             {
@@ -1682,7 +1618,7 @@
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "rbcTransfusion !== '288f3b58-ee92-4df0-b779-a32a6c3c4fc9'"
+                "hideWhenExpression": "isEmpty(rbcTransfusion)  || rbcTransfusion !== '288f3b58-ee92-4df0-b779-a32a6c3c4fc9'"
               }
             },
             {
@@ -1696,7 +1632,7 @@
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "simpleTransfusion !== 'af5f9486-feae-4d9a-b4b4-cda22a28755e'"
+                "hideWhenExpression": "isEmpty(simpleTransfusion)  || simpleTransfusion !== 'af5f9486-feae-4d9a-b4b4-cda22a28755e'"
               }
             },
             {
@@ -1710,49 +1646,17 @@
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "simpleTransfusion !== '34b5916e-4f98-4d2e-8519-0e8115d22ff1'"
+                "hideWhenExpression": "isEmpty(simpleTransfusion)  || simpleTransfusion !== '34b5916e-4f98-4d2e-8519-0e8115d22ff1'"
               }
             },
             {
-              "label": "Other Treatments",
+              "label": "Other Admission Treatments",
               "type": "obs",
               "required": false,
-              "id": "otherTreatments",
+              "id": "otheradmissionTreatments",
               "questionOptions": {
                 "rendering": "textarea",
-                "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "org.openmrs.module.mdrtb",
-                    "value": "OTHER"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED MVP",
-                    "value": "56221000105001"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "AMPATH",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "NARROWER-THAN",
-                    "type": "SNOMED CT",
-                    "value": "74964007"
-                  }
-                ]
+                "concept": "edcda88e-afe5-42d8-bbdb-006f6b12e308"
               }
             }
           ]
@@ -1795,49 +1699,17 @@
               "validators": []
             },
             {
-              "label": "Other",
+              "label": "Other Disposition",
               "type": "obs",
               "required": false,
               "id": "otherDisposition",
               "questionOptions": {
                 "rendering": "textarea",
-                "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "org.openmrs.module.mdrtb",
-                    "value": "OTHER"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED MVP",
-                    "value": "56221000105001"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "AMPATH",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "NARROWER-THAN",
-                    "type": "SNOMED CT",
-                    "value": "74964007"
-                  }
-                ]
+                "concept": "06b391e6-2fa0-4c9c-a369-9b49e0188e54"
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "patientDisposition !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "isEmpty(patientDisposition)  || patientDisposition !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             }
           ]
@@ -1852,8 +1724,18 @@
               "required": false,
               "id": "folicAcid",
               "questionOptions": {
-                "rendering": "textarea",
-                "concept": "9486be67-f05f-44a3-8962-0746f0904f1b"
+                "rendering": "radio",
+                "concept": "3d77542e-dca9-457c-af77-9b7888353bb5",
+                "answers": [
+                  {
+                    "concept": "1065AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "Yes"
+                  },
+                  {
+                    "concept": "1066AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+                    "label": "No"
+                  }
+                ]
               },
               "validators": []
             },
@@ -1924,56 +1806,24 @@
               "validators": []
             },
             {
-              "label": "Other",
+              "label": "Other Pneumococcal Prophylaxis",
               "type": "obs",
               "required": false,
               "id": "otherPneumoccalprophylaxis",
               "questionOptions": {
                 "rendering": "textarea",
-                "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "org.openmrs.module.mdrtb",
-                    "value": "OTHER"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED MVP",
-                    "value": "56221000105001"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "AMPATH",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "NARROWER-THAN",
-                    "type": "SNOMED CT",
-                    "value": "74964007"
-                  }
-                ]
+                "concept": "368ef1b2-bc7a-4519-8642-d3e72c956883"
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "pneumococcalProphylaxis !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "isEmpty(pneumococcalProphylaxis) || pneumococcalProphylaxis !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             },
             {
               "label": " Analgesics",
               "type": "obs",
               "required": false,
-              "id": "Analgesics",
+              "id": "analgesics",
               "questionOptions": {
                 "rendering": "multiCheckbox",
                 "concept": "8bf322eb-4041-42bf-aaa7-de9eb7bf1e0f",
@@ -2015,49 +1865,17 @@
               "validators": []
             },
             {
-              "label": "Other",
+              "label": "Other Analgesics",
               "type": "obs",
               "required": false,
               "id": "otherAnalgesics",
               "questionOptions": {
                 "rendering": "textarea",
-                "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "org.openmrs.module.mdrtb",
-                    "value": "OTHER"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED MVP",
-                    "value": "56221000105001"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "AMPATH",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "NARROWER-THAN",
-                    "type": "SNOMED CT",
-                    "value": "74964007"
-                  }
-                ]
+                "concept": "f7fd2dd1-45f5-46c2-a7a7-b9b766e30ec8"
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "Analgesics !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "isEmpty(analgesics) || !arrayContainsAny(['5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'], analgesics)"
               }
             },
             {
@@ -2105,91 +1923,27 @@
               "validators": []
             },
             {
-              "label": "Other",
+              "label": "Other Antimalarials",
               "type": "obs",
               "required": false,
               "id": "otherAntimalarials",
               "questionOptions": {
                 "rendering": "textarea",
-                "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "org.openmrs.module.mdrtb",
-                    "value": "OTHER"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED MVP",
-                    "value": "56221000105001"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "AMPATH",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "NARROWER-THAN",
-                    "type": "SNOMED CT",
-                    "value": "74964007"
-                  }
-                ]
+                "concept": "66e071f2-8f04-4fc9-80ed-2f768644a54f"
               },
               "validators": [],
               "hide": {
-                "hideWhenExpression": "antiMalarialsTreatment !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
+                "hideWhenExpression": "isEmpty(antiMalarialsTreatment)  || antiMalarialsTreatment !== '5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'"
               }
             },
             {
-              "label": "Other",
+              "label": "Other OutPatientMedications",
               "type": "obs",
               "required": false,
               "id": "otherOutPatientMedications",
               "questionOptions": {
                 "rendering": "textarea",
-                "concept": "5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-                "conceptMappings": [
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "org.openmrs.module.mdrtb",
-                    "value": "OTHER"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "CIEL",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "SNOMED MVP",
-                    "value": "56221000105001"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "PIH",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "SAME-AS",
-                    "type": "AMPATH",
-                    "value": "5622"
-                  },
-                  {
-                    "relationship": "NARROWER-THAN",
-                    "type": "SNOMED CT",
-                    "value": "74964007"
-                  }
-                ]
+                "concept": "c3e63462-68d4-41f3-a4e3-705181f5b9c9"
               },
               "validators": []
             }
@@ -2199,9 +1953,10 @@
     }
   ],
   "processor": "EncounterFormProcessor",
-  "encounterType": "dd528487-82a5-4082-9c72-ed246bd49591",
+  "encounter": "Consultation",
   "referencedForms": [],
-  "uuid": "72899c85-77f6-45d3-8824-2515f0666f38",
+  "uuid": "a51ed143-2686-4827-991f-9a142af9f72d",
   "description": "Uganda National Sickle Cell Program",
-  "version": "1.0"
+  "version": "1.0",
+  "encounterType": "dd528487-82a5-4082-9c72-ed246bd49591"
 }
